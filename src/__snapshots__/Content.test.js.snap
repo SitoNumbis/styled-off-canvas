@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content blur 1`] = `
+<div
+  className="Content__Div-sc-1e2zm8s-0 eoeqoK"
+  width="300px"
+>
+  content
+</div>
+`;
+
+exports[`Content default 1`] = `
+<div
+  className="Content__Div-sc-1e2zm8s-0 ghRgXy"
+  width="300px"
+>
+  content
+</div>
+`;
+
+exports[`Content left 1`] = `
+<div
+  className="Content__Div-sc-1e2zm8s-0 hqHScF"
+  width="300px"
+>
+  content
+</div>
+`;
+
+exports[`Content open 1`] = `
+<div
+  className="Content__Div-sc-1e2zm8s-0 hQhenM"
+  width="300px"
+>
+  content
+</div>
+`;
+
+exports[`Content without push 1`] = `"content"`;

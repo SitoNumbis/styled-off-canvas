@@ -13,13 +13,14 @@ const Container = styled.div(({
 }) => `
   background-color: ${background};
   height: 100%;
-  left: ${position === 'left' ? isOpen ? 0 : '-100%' : 'inherit'};
+  left: ${position === 'left' ? 0 : 'inherit'};
   max-width: ${width};
   overflow-y: auto;
   position: fixed;
-  right: ${position === 'right' ? isOpen ? 0 : '-100%' : 'inherit'};
+  right: ${position === 'right' ? 0 : 'inherit'};
   top: 0;
-  transition: ${position} ${duration} ease-in-out;
+  transform: translate3d(${isOpen ? 0 : position === 'left' ? '-100%' : '100%'}, 0, 0);
+  transition: all ${duration} ease 0s;
   width: 100%;
   z-index: 10;
 `)

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { Menu as BurgerIcon } from '@styled-icons/remix-fill/Menu'
 
-import { Menu, Overlay, StyledOffCanvas } from '../src/'
+import { Menu, Overlay, Content, StyledOffCanvas } from '../src/'
 
 import List from './components/List'
 import Close from './components/Close'
@@ -22,9 +22,9 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Container = styled.div`
-  padding: 40px;
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
 `
-
 const App = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -33,21 +33,30 @@ const App = () => {
       <GlobalStyle />
 
       <StyledOffCanvas
+        push
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
       >
-        <BurgerIcon
-          size={48}
-          css={{
-            background: '#fff',
-            borderRadius: '6px',
-            padding: '8px',
-            cursor: 'pointer'
-          }}
-          onClick={() => { setIsOpen((isOpen) => !isOpen) }}
-        />
+        <Content css={{ minHeight: 'calc(100vh - 80px)', padding: '40px' }}>
+          <div css={{ textAlign: 'right' }}>
+            <BurgerIcon
+              size={48}
+              css={{
+                background: '#fff',
+                borderRadius: '6px',
+                color: '#333',
+                cursor: 'pointer',
+                padding: '8px'
+              }}
+              onClick={() => { setIsOpen((isOpen) => !isOpen) }}
+            />
+          </div>
 
-        <GitHub />
+          <h1>Hello.</h1>
+          <p>A simple off canvas menu built with styled-components 💅</p>
+
+          <GitHub />
+        </Content>
 
         <Menu>
           <>

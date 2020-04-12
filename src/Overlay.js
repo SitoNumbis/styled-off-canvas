@@ -11,7 +11,7 @@ const Div = styled.div(({ background, opacity, duration, isOpen }) => `
   opacity: ${isOpen ? opacity : 0};
   position: fixed;
   top: 0;
-  transition: opacity ${duration} ease-in-out;
+  transition: opacity ${duration} ease 0s;
   width: 100%;
   z-index: ${isOpen ? 1 : -1};
 `)

@@ -19,6 +19,7 @@ import Context from './Context'
  * @returns {component}                   React component
  */
 const Provider = ({
+  blur = false,
   children,
   closeOnEsc = true,
   isOpen = false,
@@ -29,10 +30,12 @@ const Provider = ({
   overlayDuration = '500ms',
   overlayOpacity = 0.2,
   position = 'right',
+  push = false,
   width = '300px'
 }) => (
   <Context.Provider
     value={{
+      blur,
       closeOnEsc,
       isOpen,
       menuBackground,
@@ -42,6 +45,7 @@ const Provider = ({
       overlayDuration,
       overlayOpacity,
       position,
+      push,
       width
     }}
   >
@@ -50,6 +54,7 @@ const Provider = ({
 )
 
 Provider.propTypes = {
+  blur: PropTypes.bool,
   closeOnEsc: PropTypes.bool,
   isOpen: PropTypes.bool,
   menuBackground: PropTypes.string,
@@ -59,6 +64,7 @@ Provider.propTypes = {
   overlayDuration: PropTypes.string,
   overlayOpacity: PropTypes.number,
   position: PropTypes.oneOf(['left', 'right']),
+  push: PropTypes.bool,
   width: PropTypes.string
 }
 
